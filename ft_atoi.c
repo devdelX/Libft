@@ -6,7 +6,7 @@
 /*   By: abel-oua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 20:48:12 by abel-oua          #+#    #+#             */
-/*   Updated: 2021/11/23 17:26:10 by abel-oua         ###   ########.fr       */
+/*   Updated: 2021/12/05 17:20:07 by abel-oua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 int	ft_atoi(const char *str)
 {
-	unsigned int	i;
-	long			is_neg;
-	long			res;
+	int		i;
+	int		res;
+	int		sign;
+	char	*x;
 
-	if (!str)
-		return (0);
 	i = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		||str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-		i++;
-	is_neg = 1;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i++] == '-')
-			is_neg = -1;
-	}
 	res = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		res = (res * 10) + (str[i++] - '0');
-	return (res * is_neg);
+	sign = 1;
+	x = (char *)str;
+	while ((x[i] >= 9 && 13 >= x[i]) || x[i] == 32)
+		i++;
+	if (x[i] == '-' || x[i] == '+')
+	{
+		if (x[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (x[i] >= '0' && x[i] <= '9')
+	{
+		res = (res * 10) + x[i] - 48;
+		i++;
+	}
+	return (res * sign);
 }
-
-// int main()
-// {
-//     printf("%d\n", ft_atoi("-123"));
-// }

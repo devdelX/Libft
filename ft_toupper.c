@@ -6,22 +6,15 @@
 /*   By: abel-oua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:35:25 by abel-oua          #+#    #+#             */
-/*   Updated: 2021/11/15 18:25:59 by abel-oua         ###   ########.fr       */
+/*   Updated: 2021/12/05 23:54:56 by abel-oua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if(c >= 'a' && c <= 'z')
-    c -= 32;
-
-    return(c);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
-
-// int main()
-// {
-//     printf("%d\n", ft_toupper(97));
-//     printf("%d\n", ft_toupper(65));
-// }

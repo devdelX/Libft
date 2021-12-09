@@ -6,20 +6,15 @@
 /*   By: abel-oua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:39:38 by abel-oua          #+#    #+#             */
-/*   Updated: 2021/11/15 18:25:39 by abel-oua         ###   ########.fr       */
+/*   Updated: 2021/12/05 23:38:55 by abel-oua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int i)
+int	ft_isascii(int c)
 {
-	if (i >= 0 && i <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
-
-// int main ()
-// {
-// 	printf("%d", ft_isascii('A'));
-// }

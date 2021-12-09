@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abel-oua <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 14:39:13 by abel-oua          #+#    #+#             */
-/*   Updated: 2021/12/05 23:40:16 by abel-oua         ###   ########.fr       */
+/*   Created: 2021/12/04 15:56:07 by abel-oua          #+#    #+#             */
+/*   Updated: 2021/12/06 16:09:16 by abel-oua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strdup(char *src)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	char	*str;
+	int		count;
+	int		i;
+
+	i = 0;
+	count = ft_strlen(src);
+	str = (char *)malloc((count + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
